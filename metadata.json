@@ -1,0 +1,7 @@
+{
+  "name": "Confort y Ahorro Térmico",
+  "description": "Calculadora avanzada de eficiencia energética y confort térmico para optimizar el consumo eléctrico residencial mediante física de materiales y gestión solar pasiva.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
