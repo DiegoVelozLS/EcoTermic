@@ -31,17 +31,22 @@ export interface UserInputs {
   appliances: Appliance[];
 }
 
-export interface CalculationResult {
-  efficiencyScore: number;
-  thermalLoadEstimate: number; // Watts per sqm
-  potentialSavings: number;
-  solarGainLevel: 'Low' | 'Medium' | 'High';
-  recommendations: Recommendation[];
-}
-
 export interface Recommendation {
   title: string;
   description: string;
   category: 'Structural' | 'Technological' | 'Habit';
   impact: 'High' | 'Medium' | 'Low';
+  estimatedCost: number; // In USD
+  paybackMonths: number;
+}
+
+export interface CalculationResult {
+  efficiencyScore: number;
+  structuralLoad: number; // Watts due to building envelope
+  operationalLoad: number; // Watts due to appliances
+  totalLoadEstimate: number; // Total W/sqm
+  potentialSavings: number;
+  solarGainLevel: 'Low' | 'Medium' | 'High';
+  recommendations: Recommendation[];
+  roiYears: number;
 }
